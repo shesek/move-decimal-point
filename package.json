@@ -4,8 +4,13 @@
   "description": "Move the decimal point of string numbers",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "coffee -cp index.coffe"
   },
   "author": "Nadav Ivgi",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "coffee-script": "^1.7.1",
+    "mocha": "^1.20.1"
+  }
 }
