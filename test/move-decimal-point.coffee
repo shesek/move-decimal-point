@@ -24,3 +24,13 @@ describe 'move-decimal-point', ->
     eq (move '123', -3), '0.123'
     eq (move '1230', -1), '123'
     eq (move '1230', -2), '12.3'
+
+  it 'works on random numbers (just some extra tests, in case)', ->
+    for [1..1000]
+      num = Math.random() * 1000000
+      num = num | 0 if Math.random()<=0.5
+      n = -10 + (Math.random()*20|0)
+      continue if n is 0
+
+      eq move(move(num,n), n*-1), num
+    return
