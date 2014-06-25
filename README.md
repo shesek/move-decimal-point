@@ -26,10 +26,10 @@ move_decimal('123.456', -5); // '0.00123456'
 
 ### Test
 
-   git clone git@github.com:shesek/move-decimal-point.git &&
-   cd move-decimal-point &&
-   npm install &&
-   npm test
+    git clone git@github.com:shesek/move-decimal-point.git &&
+    cd move-decimal-point &&
+    npm install &&
+    npm test
 
 ### License
 MIT
