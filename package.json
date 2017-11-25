@@ -1,6 +1,6 @@
 {
   "name": "move-decimal-point",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Move the decimal point of string numbers",
   "main": "index.js",
   "scripts": {
