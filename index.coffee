@@ -1,4 +1,6 @@
 module.exports = (num, n) ->
+  return num if n is 0
+
   [ int, frac ] = (''+num).split '.'
   int or= '0'
   frac or= '0'

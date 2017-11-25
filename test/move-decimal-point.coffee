@@ -32,13 +32,15 @@ describe 'move-decimal-point', ->
     eq (move '-123.45', 2), '-12345'
     eq (move '-123.45', -2), '-1.2345'
 
+  it 'is a noop for n=0', ->
+    eq (move '123.456', 0), '123.456'
+
   it 'works on random numbers', ->
     for [1..1000]
       num = Math.random() * 1000000
       num = num | 0  if Math.random()<=0.5
       num = num * -1 if Math.random()<=0.5
       n = -10 + (Math.random()*20|0)
-      continue if n is 0
 
       eq move(move(num,n), n*-1), num
     return
