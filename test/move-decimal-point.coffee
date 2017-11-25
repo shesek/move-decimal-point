@@ -25,10 +25,18 @@ describe 'move-decimal-point', ->
     eq (move '1230', -1), '123'
     eq (move '1230', -2), '12.3'
 
-  it 'works on random numbers (just some extra tests, in case)', ->
+  it 'works on negative numbers', ->
+    eq (move '-9', -2), '-0.09'
+    eq (move '-123', 1), '-1230'
+    eq (move '-123', -1), '-12.3'
+    eq (move '-123.45', 2), '-12345'
+    eq (move '-123.45', -2), '-1.2345'
+
+  it 'works on random numbers', ->
     for [1..1000]
       num = Math.random() * 1000000
-      num = num | 0 if Math.random()<=0.5
+      num = num | 0  if Math.random()<=0.5
+      num = num * -1 if Math.random()<=0.5
       n = -10 + (Math.random()*20|0)
       continue if n is 0
 
